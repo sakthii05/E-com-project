@@ -1,24 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header';
+import OrderSection from './components/OrderSection';
+import PaymentSection from './components/PaymentSection';
+import DeliverySection from './components/DeliverySection';
+import AdditionalSection from './components/AdditionalSection';
+import { InputProvider } from './InputContext';
+
+
 
 function App() {
+   
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+    <div className='bg-slate-100 min-h-screen '>
+      
+      <Header />
+      <div className='grid  tablet:grid-cols-[2fr,1fr] gap-x-14 gap-y-14 sm:grid-flow-row  m-14'>
+        <InputProvider>
+            <OrderSection />
+            <PaymentSection />
+            <DeliverySection />
+            <AdditionalSection />
+       </InputProvider>
+       
+       </div>
+      </div>
+    
   );
 }
 
